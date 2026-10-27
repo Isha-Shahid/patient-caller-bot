@@ -1,0 +1,1 @@
+[00:03] SYSTEM: dial failed: SIP call failed: 403 32203 Phone number is blacklisted. (permission_denied)

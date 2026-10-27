@@ -1,0 +1,8 @@
+@"
+.env
+.venv/
+outbound-trunk.json
+__pycache__/
+NOT_FOR_REPO_*
+*.pcap
+"@ | Out-File -Encoding ascii .gitignore
