@@ -1,0 +1,28 @@
+[00:08] SYSTEM: call answered
+[00:12] CLINIC_AGENT: This call may be recorded for quality and training purposes.
+[00:21] CLINIC_AGENT: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. May I help you today?
+[00:26] PATIENT_BOT: Hi, um, I need a refill for my ibuprofen 600mg.
+[00:33] CLINIC_AGENT: I see you're calling from the number we have on file.
+[00:34] CLINIC_AGENT: Am I speaking with Hisha?
+[00:38] PATIENT_BOT: Sorry, I didn't catch that. Can you repeat it?
+[00:44] CLINIC_AGENT: No problem. I speaking with Isha?
+[00:47] PATIENT_BOT: Oh, um, it's Esha. Esha Shahid.
+[00:53] CLINIC_AGENT: Thanks, Isha.
+[00:54] CLINIC_AGENT: Please provide your date of birth.
+[00:58] PATIENT_BOT: Sure, it's January 4th, 2000.
+[01:16] CLINIC_AGENT: Just to confirm, I have your name as Isha Shah eed and your date of birth as January fourth two thousand. Is that correct? If so, could you please spell your first and last name for me?
+[01:22] PATIENT_BOT: Uh, it's Esha, E-S-H-A, and Shahid, S-H-A-H-I-D.
+[01:38] CLINIC_AGENT: Would you like to use your phone number to look up your record? If so, please tell me the number you have on file with us. If you're not sure, just let me know.
+[01:44] PATIENT_BOT: Okay, it's eight six four, seven one three, three two seven one.
+[02:00] CLINIC_AGENT: I have your phone number as eight six four seven one three three two seven one. And your date of birth as January fourth two thousand. Is that correct?
+[02:04] PATIENT_BOT: Yeah, that's correct. Can you tell me about my refill?
+[02:15] CLINIC_AGENT: I can't proceed further right now, but I can make sure our clinic support team follows up with you. Would you like me to connect you to our patient support team?
+[02:19] PATIENT_BOT: Um, can they help with my refill directly?
+[02:29] CLINIC_AGENT: Yes. The patient support team can help you with your medication refill request directly. Would you like me to connect you now?
+[02:32] PATIENT_BOT: Okay, yes, please connect me.
+[02:38] CLINIC_AGENT: Transferring you now. Thank you.
+[02:39] SYSTEM: wrap-up time reached
+[02:43] PATIENT_BOT: Okay, thanks.
+[02:43] CLINIC_AGENT: Hello. You've reached the Pretty Good AI test line.
+[02:43] CLINIC_AGENT: Goodbye.
+[02:46] SYSTEM: call ended

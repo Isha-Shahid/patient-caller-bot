@@ -1,0 +1,17 @@
+[00:08] SYSTEM: call answered
+[00:14] CLINIC_AGENT: This call may be recorded for quality and training purposes.
+[00:20] CLINIC_AGENT: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI.
+[00:21] CLINIC_AGENT: How may I help you today?
+[00:26] PATIENT_BOT: Hi, um, I wanted to know if you accept Blue Cross Blue Shield.
+[00:39] CLINIC_AGENT: Pivot Point Orthopedics accepts most insurance plans, including many Blue Cross Blue Shield plans. If you'd like to confirm your specific coverage, or update your insurance on file,
+[00:46] CLINIC_AGENT: I can help with that. Are you looking to update your insurance information or just checking for general coverage?
+[00:51] PATIENT_BOT: I'm just checking for general coverage. Could you tell me what the copay is for a first visit?
+[01:16] CLINIC_AGENT: The exact copay amount for your first visit depends on your specific Blue Cross Blue Shield plan. Cokes can vary based on your coverage details. Recommend checking your insurance card or contacting your insurance provider directly for the most accurate information. If you'd like, I can help you schedule a visit or answer other questions about our clinic.
+[01:23] PATIENT_BOT: Um, okay, I can check my insurance. But, what should I bring for the first visit?
+[01:43] CLINIC_AGENT: For your first visit, please bring your photo ID, insurance card, and a list of any medications you're taking. If you have recent medical records or imaging related to your condition, those can be helpful too. Let me know if you have any other questions or if you'd like to schedule an appointment.
+[01:49] PATIENT_BOT: Okay, I think that's all I needed. So, you do accept Blue Cross Blue Shield?
+[02:03] CLINIC_AGENT: Yes. Tidbit Point Orthopedics accepts most Blue Cross Blue Shield plans. If you wanna be sure about your specific coverage, you can check with your insurance provider or bring your car to your first visit.
+[02:05] CLINIC_AGENT: Let me know if you need anything else.
+[02:09] PATIENT_BOT: Um, no, that’s it. Okay, thanks, bye.
+[02:15] CLINIC_AGENT: You're welcome. Have a great day.
+[02:16] SYSTEM: call ended

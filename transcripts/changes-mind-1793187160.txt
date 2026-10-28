@@ -1,0 +1,21 @@
+[00:09] SYSTEM: call answered
+[00:13] CLINIC_AGENT: Call may be recorded for quality and training purposes.
+[00:21] CLINIC_AGENT: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:26] PATIENT_BOT: Hi, um, I’d like to book an appointment for Tuesday morning.
+[00:33] CLINIC_AGENT: I see you're calling from the number we have on file.
+[00:37] CLINIC_AGENT: Am I speaking with Isha?
+[00:41] PATIENT_BOT: Um, no, it’s Esha, Esha Shahid.
+[00:46] CLINIC_AGENT: Please provide your full date of birth.
+[00:50] PATIENT_BOT: It's January 4th, 2000.
+[01:05] CLINIC_AGENT: Just to confirm, can you please spell your first and last name for me?
+[01:08] CLINIC_AGENT: And your date of birth is January fourth two thousand. Correct?
+[01:16] PATIENT_BOT: Yeah, that's correct. Esha, E-S-H-A, and Shahid, S-H-A-H-I-D.
+[01:28] CLINIC_AGENT: I have your phone number as eight six four seven one three. Three two seven one
+[01:34] CLINIC_AGENT: and your date of birth, is January fourth. Two thousand. Is that correct?
+[01:39] PATIENT_BOT: Yes, that's right. Can we book that Tuesday morning appointment now?
+[01:50] CLINIC_AGENT: I can't proceed further right now, but I can make sure our clinic support team follows up with you. Please hold while I connect you to our patient support team.
+[01:53] CLINIC_AGENT: Transferring you now. Thank you.
+[01:57] PATIENT_BOT: Um, wait, can I
+[01:59] CLINIC_AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[02:01] PATIENT_BOT: Okay, thanks, bye.
+[02:08] SYSTEM: call ended

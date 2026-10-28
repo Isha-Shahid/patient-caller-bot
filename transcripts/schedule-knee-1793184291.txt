@@ -1,0 +1,29 @@
+[00:07] SYSTEM: call answered
+[00:19] CLINIC_AGENT: This call may be recorded for quality and training Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:24] PATIENT_BOT: Um, hi, I'd like to book an appointment for knee pain next week.
+[00:30] CLINIC_AGENT: I see you're calling from the number we have on file.
+[00:32] CLINIC_AGENT: Am I speaking with Esha?
+[00:35] PATIENT_BOT: Yes, that's me.
+[00:39] CLINIC_AGENT: Please provide your date of birth.
+[00:42] PATIENT_BOT: It's January 4th, 2000.
+[00:55] CLINIC_AGENT: For your knee pain, is this a new issue that needs urgent attention? Or is it a follow-up from a previous visit?
+[00:58] CLINIC_AGENT: This will help me book the right type of appointment for you.
+[01:01] PATIENT_BOT: Um, it's a new issue.
+[01:09] CLINIC_AGENT: Do you have a specific provider you'd like to see, or are you open to the first available?
+[01:12] PATIENT_BOT: I'm open to the first available.
+[01:27] CLINIC_AGENT: There are openings this Thursday, October twenty ninth. With both Doctor. Zibinu Lakoski and Doctor. Kelly Noble.
+[01:32] CLINIC_AGENT: Do you have a preference between these two providers or should I offer the earliest available slot?
+[01:36] PATIENT_BOT: Um, I don't have a preference. What's the earliest slot?
+[01:44] CLINIC_AGENT: The earliest available slot is Thursday, October twenty ninth
+[01:49] CLINIC_AGENT: at eight AM with doctor Zigming Yu Lukowski. Would you like to book that time?
+[01:52] PATIENT_BOT: Sorry, can you repeat that?
+[02:02] CLINIC_AGENT: The first opening is Thursday, October twenty nine to at eight AM with doctor Zigniew Likoski.
+[02:04] CLINIC_AGENT: Would you like to schedule that appointment?
+[02:10] PATIENT_BOT: Um, yes, let's book that for Thursday, October 29th at eight AM.
+[02:22] CLINIC_AGENT: Your appointment is set for Thursday, October twenty ninth.
+[02:33] CLINIC_AGENT: At eight AM with doctor Zigniew Lukowski at Pivot Point Orthopedics. Please bring your photo ID, insurance card, a list of your current medications, and any imaging discs you have. Would you like me to send you a text message with these appointment details?
+[02:37] PATIENT_BOT: Okay, yes, please send me a text with the details.
+[02:38] SYSTEM: wrap-up time reached
+[02:41] PATIENT_BOT: Great, bye.
+[02:45] CLINIC_AGENT: Take care. Goodbye.
+[02:49] SYSTEM: call ended

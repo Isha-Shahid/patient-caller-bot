@@ -1,0 +1,27 @@
+[00:08] SYSTEM: call answered
+[00:15] CLINIC_AGENT: This call may be recorded for quality and training purposes.
+[00:21] CLINIC_AGENT: Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI, How may I help you today?
+[00:27] PATIENT_BOT: Um, hi. I have a couple of questions about medications and running. Is that okay?
+[00:34] CLINIC_AGENT: So you're calling from the number we have on file?
+[00:38] CLINIC_AGENT: Am I speaking with Isha?
+[00:40] PATIENT_BOT: Sorry, can you repeat that?
+[00:46] CLINIC_AGENT: No problem.
+[00:47] CLINIC_AGENT: Am I speaking with Aisha?
+[00:50] PATIENT_BOT: Um, no, it’s Esha.
+[00:59] CLINIC_AGENT: Thanks for clarifying.
+[01:00] CLINIC_AGENT: Please tell me your full name and date of birth.
+[01:06] PATIENT_BOT: Sure, it’s Esha Shahid, and my date of birth is January 4th, 2000.
+[01:20] CLINIC_AGENT: Could you please spell your first and name for me to make sure I have it right?
+[01:27] PATIENT_BOT: Sure. It’s E-S-H-A, and Shahid is S-H-A-H-I-D.
+[01:40] CLINIC_AGENT: Would you like to use your phone number to look up your record?
+[01:45] CLINIC_AGENT: If so, please tell me the number you have on file with us. If you're not sure, just let me know, and we can confirm your name and date of birth again.
+[01:50] PATIENT_BOT: Okay, my number is eight six four, seven one three, three two seven one.
+[02:05] CLINIC_AGENT: I have your phone number as eight six four seven one three three two seven one. And your date of birth as January fourth, two thousand Is that correct?
+[02:13] PATIENT_BOT: Yes, that’s correct. So, about my questions... is it safe to take ibuprofen with a blood thinner?
+[02:23] CLINIC_AGENT: I can't give medical advice. But I'll connect you to our patient support team so they can help. Please stay on the line.
+[02:25] CLINIC_AGENT: Transferring you now. Thank you.
+[02:27] PATIENT_BOT: Um, okay. 
+[02:31] CLINIC_AGENT: Hello. You've reached the Pretty Good AI test line. Goodbye.
+[02:34] PATIENT_BOT: Sorry, can you repeat that?
+[02:40] SYSTEM: wrap-up time reached
+[02:40] SYSTEM: call ended

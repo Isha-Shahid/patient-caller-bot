@@ -1,0 +1,8 @@
+[00:24] SYSTEM: call answered
+[00:30] CLINIC_AGENT: This call may be recorded for quality and training purposes.
+[00:36] CLINIC_AGENT: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:41] PATIENT_BOT: Um, hi. I have a couple of questions about medications and exercise.
+[00:50] CLINIC_AGENT: I see you're calling from the number we have on file.
+[00:51] CLINIC_AGENT: Am I speaking with Esha?
+[00:54] PATIENT_BOT: Yeah, that's me.
+[00:56] SYSTEM: call ended

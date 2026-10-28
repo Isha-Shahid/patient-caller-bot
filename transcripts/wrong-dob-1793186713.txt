@@ -1,0 +1,37 @@
+[00:09] SYSTEM: call answered
+[00:16] CLINIC_AGENT: This call may be recorded for quality and training purposes.
+[00:22] CLINIC_AGENT: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:27] PATIENT_BOT: Um, hi. I want to reschedule my appointment.
+[00:35] CLINIC_AGENT: I see you're calling from the number we have on file. Am I speaking with Esha?
+[00:38] PATIENT_BOT: Yeah, that's me.
+[00:42] CLINIC_AGENT: Please provide your date of birth.
+[00:46] PATIENT_BOT: Um, it's April 12th, 1995.
+[00:58] CLINIC_AGENT: Don't have any upcoming appointments to reschedule. Would you like to book a new appointment instead?
+[01:02] PATIENT_BOT: Oh, um, I thought I had an appointment. Can you check again?
+[01:14] CLINIC_AGENT: I checked again. And there are no upcoming appointments scheduled for you. Would you like to book a new appointment?
+[01:18] PATIENT_BOT: Okay, sure. What dates do you have available?
+[01:34] CLINIC_AGENT: Before I check the schedule, can you tell me what kind of visit you need? For example, is this for a routine checkup, a follow-up, something urgent? Or another reason?
+[01:37] PATIENT_BOT: Um, it's for a follow-up.
+[01:44] CLINIC_AGENT: Just to confirm, you'd like to book a follow-up visit? Is that correct?
+[01:47] PATIENT_BOT: Yes, that’s correct.
+[01:55] CLINIC_AGENT: Do you have a specific provider you'd like to see, or are you open to anyone available?
+[01:58] PATIENT_BOT: Um, I’m open to anyone available.
+[02:05] CLINIC_AGENT: One moment while I check for the next available follow-up appointment.
+[02:10] PATIENT_BOT: Okay,
+[02:11] CLINIC_AGENT: I found several follow-up appointments on Thursday, October twenty ninth,
+[02:16] CLINIC_AGENT: with different providers. Do you have a preferred time of day like morning or afternoon?
+[02:20] PATIENT_BOT: Um, afternoon would be better for me.
+[02:30] CLINIC_AGENT: The first available afternoon slot is at one PM with Carl Mentz PT, on Thursday, October twenty ninth.
+[02:32] CLINIC_AGENT: Would you like to book that time?
+[02:35] PATIENT_BOT: Yeah, let's book that time.
+[02:40] SYSTEM: wrap-up time reached
+[02:49] CLINIC_AGENT: Your follow-up appointment is set for Thursday, October twenty ninth at one PM with Carl Mintz PT at Pivot Point Orthopedics.
+[02:56] CLINIC_AGENT: Please bring your photo ID insurance card, a list of your current medications, and any imaging discs you have.
+[02:59] CLINIC_AGENT: Would you like me to send you a text message with these appointment details?
+[03:02] PATIENT_BOT: Um, yes, that's fine. 
+[03:07] CLINIC_AGENT: You're all set.
+[03:11] CLINIC_AGENT: If you need anything else before your appointment, just let me know.
+[03:12] CLINIC_AGENT: Have a great day.
+[03:15] PATIENT_BOT: Okay, thanks, bye.
+[03:19] SYSTEM: hard limit reached, hanging up
+[03:19] SYSTEM: call ended

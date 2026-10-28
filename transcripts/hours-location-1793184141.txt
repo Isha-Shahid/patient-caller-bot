@@ -1,0 +1,19 @@
+[00:08] SYSTEM: call answered
+[00:12] CLINIC_AGENT: This call may be recorded for quality and training purposes.
+[00:20] CLINIC_AGENT: Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[00:24] PATIENT_BOT: Hi, um, can I ask about your office hours?
+[00:37] CLINIC_AGENT: Sure. Pivot Point Orthopaedics is open Monday, two and Thursday from nine AM to four PM, Wednesday from twelve PM to seven PM, and Friday from nine AM to twelve PM.
+[00:39] CLINIC_AGENT: Is there anything else you'd like to know?
+[00:42] PATIENT_BOT: Yeah, um, what's the address?
+[00:50] CLINIC_AGENT: The clinic is located at one two three four Recovery Way,
+[00:53] CLINIC_AGENT: suite two hundred, Austin. Would you like directions or any other details?
+[00:58] PATIENT_BOT: Oh, okay. Is there parking available?
+[01:05] CLINIC_AGENT: Yes. Free patient parking is available in the surface lot. Front of the building.
+[01:07] CLINIC_AGENT: Let me know if you have any other questions.
+[01:11] PATIENT_BOT: Um, what should I bring for a first visit?
+[01:26] CLINIC_AGENT: For your first visit, please bring your photo ID insurance card, and a list of any medications you take. If you have recent medical records or imaging related to your condition, those can help too.
+[01:28] CLINIC_AGENT: Anything else you'd like to know?
+[01:32] PATIENT_BOT: No, that's all, thanks. Okay, bye!
+[01:36] CLINIC_AGENT: Welcome.
+[01:38] CLINIC_AGENT: Have a great day.
+[01:38] SYSTEM: call ended
