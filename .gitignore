@@ -1,10 +1,9 @@
-@"
 .env
 .venv/
-outbound-trunk.json
 __pycache__/
+*.pyc
+outbound-trunk.json
 NOT_FOR_REPO_*
 *.pcap
-"@ | Out-File -Encoding ascii .gitignorefailed_dials/
 recordings/2026*
 docs/early-tests/*.mp3
