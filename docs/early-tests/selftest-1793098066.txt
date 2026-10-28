@@ -1,7 +1,0 @@
-[00:09] SYSTEM: call answered
-[00:16] CLINIC_AGENT: Thank you for calling ServicePoint Orthopaedics. How can I help you?
-[00:21] PATIENT_BOT: Hi, um, I’d like to know what time the clinic opens?
-[00:27] CLINIC_AGENT: We are open at nine. Nine AM.
-[00:29] CLINIC_AGENT: In the morning.
-[00:33] PATIENT_BOT: Thanks for that information! Have a great day!
-[00:38] CLINIC_AGENT: Thank you so much for calling. Goodbye.

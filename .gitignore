@@ -6,3 +6,4 @@ __pycache__/
 NOT_FOR_REPO_*
 *.pcap
 "@ | Out-File -Encoding ascii .gitignorefailed_dials/
+recordings/2026*
