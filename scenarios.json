@@ -1,6 +1,6 @@
 {
-  "selftest": {"name": "Esha Shahid", "dob": "January 4th, 2000",
-    "goal": "Ask what time the clinic opens, then say thanks and end the call."},
+  "hours-location": {"name": "Esha Shahid", "dob": "January 4th, 2000",
+    "goal": "Ask the office hours, the address, and whether there is parking. Then ask what to bring to a first visit."},
   "schedule-knee": {"name": "Esha Shahid", "dob": "January 4th, 2000",
     "goal": "Book a new appointment for knee pain next week, weekday morning preferred. Confirm date, time and doctor before ending."},
   "sunday-request": {"name": "Esha Shahid", "dob": "January 4th, 2000",
@@ -11,8 +11,6 @@
     "goal": "Cancel your upcoming appointment. Ask whether there is a cancellation fee. Confirm it is cancelled."},
   "refill": {"name": "Esha Shahid", "dob": "January 4th, 2000",
     "goal": "Request a refill of your pain medication, ibuprofen 600mg. Ask when it will be ready and which pharmacy it goes to."},
-  "hours-location": {"name": "Esha Shahid", "dob": "January 4th, 2000",
-    "goal": "Ask the office hours, the address, and whether there is parking. Then say thanks and end the call."},
   "insurance": {"name": "Esha Shahid", "dob": "January 4th, 2000",
     "goal": "Ask whether Blue Cross Blue Shield is accepted, and what the copay is for a first visit."},
   "wrong-dob": {"name": "Esha Shahid", "dob": "March 12th, 1995",

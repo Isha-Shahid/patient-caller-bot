@@ -1,11 +1,15 @@
 import asyncio, json, sys, time
+from pathlib import Path
 from dotenv import load_dotenv
 from livekit import api
 
 load_dotenv()
 ASSESSMENT_NUMBER = "+18054398008"
+COOLDOWN_SECONDS = 240
+LOCK = Path(".last_dispatch")
 
-async def main(scenario_id: str, phone: str):
+
+async def send(scenario_id: str, phone: str):
     scenarios = json.load(open("scenarios.json", encoding="utf-8"))
     s = scenarios[scenario_id]
     call_id = f"{scenario_id}-{int(time.time())}"
@@ -19,9 +23,29 @@ async def main(scenario_id: str, phone: str):
         )
     )
     await lk.aclose()
+    LOCK.write_text(str(time.time()))
     print("dispatched", call_id, "->", phone)
 
+
+def main():
+    args = sys.argv[1:]
+    scenarios = json.load(open("scenarios.json", encoding="utf-8"))
+    if not args or args[0] == "--list":
+        print("\n".join(scenarios))
+        return
+    if args[0] not in scenarios:
+        print("unknown scenario. options:", ", ".join(scenarios))
+        return
+    phone = ASSESSMENT_NUMBER
+    if "--self-test" in args:
+        phone = args[args.index("--self-test") + 1]
+    if LOCK.exists():
+        age = time.time() - float(LOCK.read_text())
+        if age < COOLDOWN_SECONDS:
+            print(f"blocked: last dispatch was {int(age)}s ago. Wait {int(COOLDOWN_SECONDS - age)}s.")
+            return
+    asyncio.run(send(args[0], phone))
+
+
 if __name__ == "__main__":
-    # usage: python dispatch.py <scenario_id> [--self-test +92XXXXXXXXXX]
-    phone = sys.argv[3] if len(sys.argv) > 3 and sys.argv[2] == "--self-test" else ASSESSMENT_NUMBER
-    asyncio.run(main(sys.argv[1], phone))
+    main()

@@ -1,0 +1,22 @@
+[00:00] SYSTEM: scenario: unknown
+[00:00] SYSTEM: call answered
+[00:03] CLINIC_AGENT: This call may be recorded for quality and training purposes.
+[00:09] CLINIC_AGENT: Thanks for calling Pivot Point Orthopaedics.
+[00:11] CLINIC_AGENT: Part of pretty good AI.
+[00:13] CLINIC_AGENT: How may I help you today?
+[00:20] PATIENT_BOT: Hi, uh, I wanted to ask about your office hours and the address. Also, is there parking available?
+[00:25] CLINIC_AGENT: Our clinic is open Monday through Friday.
+[00:29] CLINIC_AGENT: Hours are nine AM to four PM on Monday, Tuesday, and Thursday,
+[00:32] CLINIC_AGENT: twelve PM to seven PM on Wednesday,
+[00:35] CLINIC_AGENT: and nine AM to twelve PM on Friday.
+[00:39] CLINIC_AGENT: Free patient parking is available in the surface lot in front of the building.
+[00:41] CLINIC_AGENT: Is there anything else I can help with?
+[00:47] PATIENT_BOT: Yes, um, could you tell me what I need to bring for a first visit?
+[00:53] CLINIC_AGENT: For your first
+[00:56] CLINIC_AGENT: visit, please bring a photo ID, your insurance card, and a list of any medications you take.
+[01:00] CLINIC_AGENT: If you have recent medical records or imaging related to your condition, those can help too.
+[01:04] CLINIC_AGENT: Let me know if you have any other questions or if you'd like to schedule an appointment.
+[01:11] PATIENT_BOT: Okay, thank you for the information! I don't have any more questions right now. Goodbye!
+[01:16] CLINIC_AGENT: Have a great day.
+[01:18] CLINIC_AGENT: Goodbye.
+[01:43] SYSTEM: call ended
