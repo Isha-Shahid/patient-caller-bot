@@ -1,27 +1,85 @@
 # Architecture
 
-## How it works
+patient-caller-bot places an outbound phone call to a clinic's voice agent, plays a simulated patient following one scenario, and writes a timestamped transcript of the conversation for review.
 
-A LiveKit agent worker (`agent.py`) registers under the name `caller`. `dispatch.py` creates a LiveKit room and dispatches a job to that worker, passing the scenario goal and phone number as job metadata. When the job starts, the agent builds an `AgentSession` with a separate speech-to-text, LLM and text-to-speech component, starts the session in the room, and then places an outbound SIP call into the same room through the LiveKit SIP API (`create_sip_participant`). When the callee answers, the pipeline listens to the other agent, transcribes it, asks the LLM for the patient's next line, and speaks it back. The carrier records the call and `fetch_recordings.py` downloads the audio. Transcripts are written per call so each conversation can be reviewed alongside its audio.
+## Call flow
 
-## Key choices and trade-offs
+```
+dispatch.py <scenario>
+   |  reads scenarios.json, creates a LiveKit room "<scenario>-<unix time>",
+   |  dispatches agent "caller" with metadata {call_id, phone_number, name, dob, goal}
+   v
+agent.py (LiveKit worker, `python agent.py dev`)
+   |  starts the AgentSession and dials at the same time
+   |  create_sip_participant(outbound trunk, wait_until_answered=True)
+   v
+Clinic line  <--- SIP trunk ---> LiveKit room <---> STT -> LLM -> TTS
+   |
+   v
+transcripts/<call_id>.txt   (or failed_dials/ if the dial failed)
+```
 
-**Pipeline mode, as required.** Separate STT, LLM and TTS gives control over each stage and makes latency easy to measure per stage.
+1. **Dispatch.** `dispatch.py` picks a scenario, builds a unique room name, and sends an explicit agent dispatch. The scenario's patient name, date of birth and goal travel in the job metadata, so the worker needs no other state.
+2. **Session start.** The worker connects, parses the metadata, builds the persona prompt, and starts the `AgentSession` as a background task while the dial is in progress, so no audio is missed once the clinic answers.
+3. **Dial.** The call goes out through a LiveKit SIP outbound trunk and blocks until it is answered. If dialing fails, the error is logged, the partial transcript is moved to `failed_dials/`, and the room is deleted.
+4. **Greeting.** The persona is told to let the other side speak first. If nothing is heard for 8 seconds after the call is answered, the bot says a single short "Hello?".
+5. **Conversation.** Runs until the bot calls `end_call`, the session closes, or the time limits below are hit.
+6. **Teardown.** The room is deleted, which ends the call, and the transcript file is flushed and closed.
 
-**STT: Deepgram Nova-3.** Low streaming latency and good accuracy on telephone-quality audio, which matters because the other side arrives over a phone line. Alternatives considered: [FILL IN, for example AssemblyAI, Whisper-based services] - chose Deepgram for [FILL IN reason after your testing].
+## Voice pipeline
 
-**LLM: GPT-4o-mini.** A small, fast model keeps response time low, and the persona prompt is short and constrained, so a larger model was not needed. The trade-off is weaker handling of very long or tricky conversations. [FILL IN: any model you tried and what changed.]
+| Stage | Choice |
+|---|---|
+| Voice activity detection | Silero VAD |
+| Speech to text | Deepgram `nova-3`, `en-US` |
+| LLM | OpenAI `gpt-4o-mini` |
+| Text to speech | Cartesia (plugin defaults) |
+| End-of-turn detection | LiveKit `MultilingualModel` turn detector, layered on VAD |
 
-**TTS: Cartesia.** Chosen for fast time-to-first-audio and natural-sounding voices, which directly affects how human the caller feels. [FILL IN: voice choice and why.]
+The choices favor low latency and low cost, which matter more on a phone call than model size. Short patient utterances keep the LLM and TTS stages fast. Interruption handling uses the LiveKit Agents defaults (VAD plus the turn detector); nothing is custom-tuned.
 
-**Turn detection and interruptions.** Silero VAD detects speech, and the LiveKit multilingual turn-detector model decides when the other side has finished a turn, so the bot does not cut in during pauses. The bot waits for the other side to speak first, as a real caller would. For barge-in tests the same pipeline lets the bot be interrupted, and scenarios that test interruption are marked as such. [FILL IN: any tuning of endpointing delay you did.]
+## Persona prompt
 
-**Persona prompt.** The persona keeps replies short, uses plain spoken language and stays on one goal per call, then ends the call politely. Short turns reduce latency and keep the conversation realistic.
+The prompt in `agent.py` makes the model behave like a patient instead of an assistant:
 
-**Phone connection.** LiveKit's SIP integration connects the room to a carrier trunk. [FILL IN: the carrier you actually used for your real calls and why.]
+- **Register.** Short, casual, usually under 15 words, with sparing fillers. It avoids assistant phrases such as "How can I assist" and "Have a great day".
+- **One thing at a time.** It answers only what is asked and asks one question at a time.
+- **Details on demand.** Name, date of birth and callback number are given only when the clinic asks, after which the bot returns to its goal.
+- **Goal checklist.** The bot tracks every part of its goal, asks again once for anything skipped, and confirms anything vague or confusing.
+- **No early exit.** If the goal is met quickly, it asks one related follow-up (what to bring, arrival time, parking, cost) before finishing.
+- **Clean ending.** It says goodbye out loud first, then calls `end_call` in a separate step.
 
-**Latency.** Streaming STT and TTS, a small LLM, and a single process close to the LiveKit region keep response time low. [FILL IN: measured delay between the other side finishing and the bot speaking, from your calls.]
+## Call control and safety
 
-## What I iterated on
+- **Fixed target.** `dispatch.py` hardcodes the assessment number. The only override is `--self-test <number>`, so the bot cannot be pointed at an arbitrary number by accident.
+- **Cooldown.** A 240-second cooldown between dispatches is enforced through a local `.last_dispatch` file.
+- **`end_call` guard.** The tool refuses to hang up in the first 60 seconds after the call is answered and tells the model to ask another follow-up instead.
+- **Time limits.** The bot wraps up politely at about 150 seconds and hangs up regardless at about 185 seconds. Both timers start after the greeting check, so they are approximate relative to the moment of answer.
+- **Failed dials** are isolated in `failed_dials/` so they do not mix with real transcripts.
 
-[FILL IN after your calls. Examples: early calls where the bot talked over the agent, how you changed turn detection, persona wording changes, a bug you fixed in the dial flow. Reviewers want evidence you listened and improved.]
+## Output
+
+Each call writes `transcripts/<call_id>.txt`, one line per turn:
+
+```
+[mm:ss] ROLE: text
+```
+
+Roles are `PATIENT_BOT` (this bot), `CLINIC_AGENT` (the other side, as heard by STT) and `SYSTEM` (call answered, wrap-up, hard limit, dial failure, call ended).
+
+## Configuration
+
+Environment variables, loaded from `.env` (see `.env.example`):
+
+- `LIVEKIT_URL`, `LIVEKIT_API_KEY`, `LIVEKIT_API_SECRET`
+- `SIP_OUTBOUND_TRUNK_ID`
+- `DEEPGRAM_API_KEY`, `OPENAI_API_KEY`, `CARTESIA_API_KEY`
+- `CALLER_PHONE_SPOKEN` (optional): the callback number as the bot says it aloud
+
+## Known limitations
+
+- Transcripts come from speech-to-text, so clinic-side wording can contain recognition errors. No audio is recorded.
+- Role labels assume the clinic is the only other speaker in the room.
+- The cooldown is a local file, so it does not protect against dispatching from two machines.
+- STT is set to English only, although the turn detector is multilingual.
+- Time limits are approximate, as noted above.
