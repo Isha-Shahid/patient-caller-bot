@@ -1,0 +1,2 @@
+[00:25] SYSTEM: call answered
+[00:40] CLINIC_AGENT: Goodbye.

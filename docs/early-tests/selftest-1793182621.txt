@@ -1,0 +1,6 @@
+[00:12] SYSTEM: call answered
+[00:19] CLINIC_AGENT: This call may be recorded for quality and training purposes.
+[00:25] CLINIC_AGENT: Thank you for calling Pivot Point Orthopaedics. Would you like to create a demo patient profile today?
+[00:28] CLINIC_AGENT: I just need your first and last name to get started.
+[00:33] PATIENT_BOT: Um, I’m Esha Shahid. What time do you open?
+[00:46] CLINIC_AGENT: Let me finish setting up your demo patient profile. That I can help with your question about our opening hours. One moment.
